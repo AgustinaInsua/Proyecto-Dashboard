@@ -40,9 +40,11 @@ p {
 }
 
 .title h1 {
-    font-size: 11vh; 
+    font-size: 10vh; 
     font-weight: 400;
     color: #4F4F4F;
+    min-width: 400px;
+    max-width: 70vh;
 }
 
 button {
