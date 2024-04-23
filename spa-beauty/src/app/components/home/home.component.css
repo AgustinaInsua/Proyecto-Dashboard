@@ -1,27 +1,53 @@
 :host {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('/assets/img/fondo.jpg') ;
-    background-size: cover;
-    background-position: center;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.container {
+    background-color: #F2BDBD;
+    height: 800px;
+    width: 50%;
+    float: left;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins', sans-serif; 
 }
-.content {
 
-    color: white;
+
+body {
+    background-image: url('/assets/img/fondo.jpg') ;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 800px;
 }
+
+.content {
+    color: #4F4F4F;
+    margin: 0% 5% 0%;
+}
+
+h1, p {
+    margin: 0% 0% 10%;
+}
+
+p {
+    font-size: 3vh; 
+}
+
 
 .title {
     text-align: left; 
 }
 
 .title h1 {
-    font-size: 7vh; 
+    font-size: 11vh; 
+    font-weight: 400;
     color: #4F4F4F;
+}
+
+button {
+    margin: 0% 0% 1%;
+    width: 200px;
+    border-radius: 30px;
+    background-color: #4F4F4F;
 }
