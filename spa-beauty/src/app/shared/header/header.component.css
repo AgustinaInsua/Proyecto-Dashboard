@@ -19,8 +19,4 @@ a{
 .navbar-toggler {
   border-color: #4f4f4f;
 }
-@media (max-width: 600px) {
-  .navbar-nav {
-    display: none; /* Oculta las opciones del menú cuando el ancho de la pantalla sea 600px o menos */
-  }
-}
+
