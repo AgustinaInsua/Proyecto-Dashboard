@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background: #111827;
-}
-
-
-
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
