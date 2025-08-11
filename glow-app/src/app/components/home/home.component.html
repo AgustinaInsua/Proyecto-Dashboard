@@ -1,17 +1,37 @@
 <app-header></app-header>
-<section class="relative h-screen max-h-[800px] min-h-[600px] overflow-hidden bg-cover bg-center" >
-  <div class="absolute inset-0 bg-[#F2C6C4]/70 z-0"></div>
-  <div class="relative z-10 h-full flex items-center max-w-[1440px] mx-auto px-16">
-    <div class="max-w-lg">
-      <h1 class="text-7xl font-light text-[#4F4F4F] leading-tight">
-        Discover your <span class="font-semibold">natural glow</span> with us.
-      </h1>
-      <p class="mt-4 font-light text-[#4F4F4F]">
-        Explore our services to unlock your best self and enhance your unique beauty.
-      </p>
-      <button class="mt-6 bg-[#4F4F4F] text-white px-6 py-2 rounded hover:bg-gray-800 transition">
-        See more
-      </button>
+<section class="relative overflow-hidden">
+  <!-- overlay rosa -->
+  <div class="absolute inset-0 bg-[#F2C6C4]/70 -z-10"></div>
+
+  <!-- Grid full-bleed con alto fluido -->
+  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-[clamp(520px,80vh,900px)]">
+    
+    <!-- Texto (izquierda) -->
+    <div class="order-2 md:order-1 flex items-center">
+      <div class="w-full max-w-[640px] xl:max-w-[720px] mx-auto px-6 md:px-12 xl:pl-16">
+        <h1 class="font-light text-[#4F4F4F] leading-[1.08] text-[clamp(32px,6vw,72px)]">
+          Discover your <span class="font-semibold">natural glow</span> with us.
+        </h1>
+        <p class="mt-5 font-light text-[#4F4F4F]/90 text-[clamp(16px,2.2vw,20px)]">
+          Explore our services to unlock your best self and enhance your unique beauty.
+        </p>
+        <button class="mt-8 bg-[#4F4F4F] text-white rounded-lg hover:bg-gray-800 transition px-5 py-2 text-[clamp(14px,1.8vw,16px)]">
+          See more
+        </button>
+      </div>
+    </div>
+
+    <!-- Imagen (derecha) -->
+    <div class="order-1 md:order-2 relative">
+      <img
+        src="assets/imgs/inicio3.png"
+        alt="Productos de cuidado personal sobre bases cerámicas con fondo rosa"
+        class="absolute inset-0 w-full h-full
+               object-cover            /* mobile: llena y recorta si hace falta */
+               md:object-contain       /* desktop: NO recorta, mantiene proporción */
+               object-center
+               md:object-right"       
+      />
     </div>
   </div>
 </section>
