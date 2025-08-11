@@ -1,13 +1,22 @@
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-4 text-center">
+  <div class="mx-auto max-w-[1440px] w-full px-4 md:px-8 text-center">
     <h2 class="text-3xl mb-12 font-semibold text-[#4F4F4F] leading-tight">Services</h2>
-    <div class="grid md:grid-cols-4 gap-8 mt-24" >
-      <div *ngFor="let service of services" class="flex flex-col items-center">
-        <img [src]="service.image" alt="service" class="w-36 h-48 object-cover rounded-[70%_70%_60%_60%] shadow-md border-4 border-[#F2C6C4]">
-        <h3 class="mt-4 text-xl font-medium text-gray-700">{{ service.title }}</h3>
-        <p class="text-sm text-gray-500 mt-2">{{ service.description }}</p>
+    
+    <div class="grid md:grid-cols-4 gap-8 mt-24">
+      <div *ngFor="let service of services" 
+           class="flex flex-col items-center max-w-[220px] mx-auto">
+           
+        <img [src]="service.image" alt="service"
+             class="w-36 h-48 object-cover rounded-[70%_70%_60%_60%] shadow-md border-4 border-[#F2C6C4]">
+        
+        <h3 class="mt-4 text-xl font-medium text-gray-700 text-center">
+          {{ service.title }}
+        </h3>
+        
+        <p class="text-sm text-gray-500 mt-2 text-center">
+          {{ service.description }}
+        </p>
       </div>
     </div>
   </div>
 </section>
-
