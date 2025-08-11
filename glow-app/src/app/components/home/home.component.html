@@ -1,40 +1,42 @@
 <app-header></app-header>
+
 <section class="relative overflow-hidden">
-  <!-- overlay rosa -->
-  <div class="absolute inset-0 bg-[#F2C6C4]/70 -z-10"></div>
+  <!-- fondo -->
+  <div class="absolute inset-0 bg-white -z-10"></div>
 
-  <!-- Grid full-bleed con alto fluido -->
-  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-[clamp(520px,80vh,900px)]">
-    
-    <!-- Texto (izquierda) -->
-    <div class="order-2 md:order-1 flex items-center">
-      <div class="w-full max-w-[640px] xl:max-w-[720px] mx-auto px-6 md:px-12 xl:pl-16">
-        <h1 class="font-light text-[#4F4F4F] leading-[1.08] text-[clamp(32px,6vw,72px)]">
-          Discover your <span class="font-semibold">natural glow</span> with us.
-        </h1>
-        <p class="mt-5 font-light text-[#4F4F4F]/90 text-[clamp(16px,2.2vw,20px)]">
-          Explore our services to unlock your best self and enhance your unique beauty.
-        </p>
-        <button class="mt-8 bg-[#4F4F4F] text-white rounded-lg hover:bg-gray-800 transition px-5 py-2 text-[clamp(14px,1.8vw,16px)]">
-          See more
-        </button>
+  <!-- CONTENEDOR CENTRADO A 1440 -->
+  <div class="mx-auto max-w-[1440px] w-full px-4 md:px-8">
+    <!-- Grid -->
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-[clamp(520px,80vh,900px)]">
+      
+      <!-- Texto (izquierda) -->
+      <div class="order-2 md:order-1 flex items-center">
+        <div class="w-full max-w-[540px] xl:max-w-[520px] mx-auto md:mx-0">
+          <h1 class="font-light text-[#4F4F4F] leading-[1.08] text-[clamp(32px,6vw,72px)]">
+            Discover your <span class="font-semibold">natural glow</span> with us.
+          </h1>
+          <p class="mt-5 font-light text-[#4F4F4F]/90 text-[clamp(16px,2.2vw,20px)]">
+            Explore our services to unlock your best self and enhance your unique beauty.
+          </p>
+          <button class="mt-8 bg-[#4F4F4F] text-white rounded-lg hover:bg-gray-800 transition px-5 py-2 text-[clamp(14px,1.8vw,16px)]">
+            See more
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Imagen (derecha) -->
-    <div class="order-1 md:order-2 relative">
-      <img
-        src="assets/imgs/inicio3.png"
-        alt="Productos de cuidado personal sobre bases cerámicas con fondo rosa"
-        class="absolute inset-0 w-full h-full
-               object-cover            /* mobile: llena y recorta si hace falta */
-               md:object-contain       /* desktop: NO recorta, mantiene proporción */
-               object-center
-               md:object-right"       
-      />
+      <!-- Imagen (derecha) -->
+      <div class="order-1 md:order-2 relative">
+        <img
+          src="assets/imgs/inicio5.png"
+          alt="Productos de cuidado personal"
+          class="absolute inset-y-0 right-0 h-full w-auto
+                 object-contain md:object-contain"
+        />
+      </div>
     </div>
   </div>
 </section>
+
 <services></services>
 <app-about-products></app-about-products>
 <app-footer></app-footer>
