@@ -1,0 +1,36 @@
+<section class="py-16 md:py-20 bg-white">
+  <div class="mx-auto max-w-[1440px] w-full px-4 md:px-8">
+
+    <p class="text-sm tracking-wide text-[#D08585] text-center">{{ overline }}</p>
+
+    <h2 class="mt-2 text-3xl md:text-4xl font-light text-[#4F4F4F] leading-tight text-center">
+      {{ title }}
+    </h2>
+
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      @for (t of items; track t.name) {
+        <article
+          class="rounded-2xl border border-gray-100 p-6 text-left shadow-sm hover:shadow-md transition-shadow bg-white h-full flex flex-col"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              [src]="t.avatar || 'assets/imgs/avatars/default.jpg'"
+              [alt]="t.name"
+              class="h-10 w-10 rounded-full object-cover ring-1 ring-black/5"
+            />
+            <div>
+              <div class="font-medium text-[#4F4F4F]">{{ t.name }}</div>
+              @if (t.role) {
+                <div class="text-xs text-[#4F4F4F]/80">{{ t.role }}</div>
+              }
+            </div>
+          </div>
+
+          <p class="mt-4 text-[#4F4F4F]/80 leading-relaxed flex-grow">
+            {{ t.text }}
+          </p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
