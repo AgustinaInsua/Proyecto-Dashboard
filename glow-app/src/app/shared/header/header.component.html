@@ -1,12 +1,40 @@
-<header class="w-full bg-white shadow-md fixed top-0 z-50">
-  <div class="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-4">
-    <div class="text-xl font-bold text-[#4F4F4F]">Glow Spa</div>
-    <nav class="space-x-6 text-sm text-[#4F4F4F] font-medium">
-      <a href="#" class="hover:text-pink-600">Home</a>
-      <a href="#" class="hover:text-pink-600">Services</a>
-      <a href="#" class="hover:text-pink-600">Products</a>
-      <a href="#" class="hover:text-pink-600">Blogs</a>
-      <a href="#" class="hover:text-pink-600">Contact</a>
+<header #hdr class="bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-md">
+  <div class="max-w-[1440px] mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+    <button type="button"
+            (click)="navigateTo('home')"
+            class="text-xl font-bold text-[#4F4F4F] focus:outline-none">
+      Glow Spa
+    </button>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm text-[#4F4F4F] font-medium">
+      <button (click)="navigateTo('home')"         class="hover:text-pink-600">Home</button>
+      <button (click)="navigateTo('services')"     class="hover:text-pink-600">Services</button>
+      <button (click)="navigateTo('products')"     class="hover:text-pink-600">Products</button>
+      <button (click)="navigateTo('testimonials')" class="hover:text-pink-600">Testimonials</button>
+      <button (click)="navigateTo('contact')"      class="hover:text-pink-600">Contact</button>
+    </nav>
+
+    <button type="button"
+            (click)="toggle()"
+            aria-label="Toggle menu"
+            [attr.aria-expanded]="open()"
+            class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-[#4F4F4F] hover:bg-gray-100">
+      <svg *ngIf="!open()" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg *ngIf="open()" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <div *ngIf="open()" class="md:hidden border-t border-gray-100">
+    <nav class="px-4 py-3 flex flex-col gap-2 text-[#4F4F4F] font-medium">
+      <button (click)="navigateTo('home')"         class="py-2 text-left hover:text-pink-600">Home</button>
+      <button (click)="navigateTo('services')"     class="py-2 text-left hover:text-pink-600">Services</button>
+      <button (click)="navigateTo('products')"     class="py-2 text-left hover:text-pink-600">Products</button>
+      <button (click)="navigateTo('testimonials')" class="py-2 text-left hover:text-pink-600">Testimonials</button>
+      <button (click)="navigateTo('contact')"      class="py-2 text-left hover:text-pink-600">Contact</button>
     </nav>
   </div>
 </header>
