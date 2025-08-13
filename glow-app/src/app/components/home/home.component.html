@@ -1,62 +1,63 @@
 <app-header></app-header>
 
-<section class="relative overflow-hidden">
-
-  <div class="absolute inset-0 bg-white -z-10"></div>
-
+<section id="home" class="relative overflow-hidden pt-24 md:pt-28" aria-labelledby="hero-title">
   <div class="mx-auto max-w-[1440px] w-full px-4 md:px-8">
-
-    <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-[clamp(520px,80vh,900px)]">
-      
-
-      <div class="order-2 md:order-1 flex items-center">
-        <div class="w-full max-w-[540px] xl:max-w-[520px] mx-auto md:mx-0">
-          <h1 class="font-light text-[#4F4F4F] leading-[1.08] text-[clamp(32px,6vw,72px)]">
-            Discover your <span class="font-semibold">natural glow</span> with us.
-          </h1>
-          <p class="mt-5 font-light text-[#4F4F4F]/90 text-[clamp(16px,2.2vw,20px)]">
-            Explore our services to unlock your best self and enhance your unique beauty.
-          </p>
-          <button class="mt-8 bg-[#4F4F4F] text-white rounded-lg hover:bg-gray-800 transition px-5 py-2 text-[clamp(14px,1.8vw,16px)]">
-            See more
-          </button>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 min-h-[clamp(520px,80vh,900px)] items-center gap-6">
+      <div class="text-center md:text-left">
+        <h1 id="hero-title" class="font-light text-[#4F4F4F] leading-[1.08] text-[clamp(32px,6vw,72px)]">
+          Discover your <span class="font-semibold">natural glow</span> with us.
+        </h1>
+        <p class="mt-5 font-light text-[#4F4F4F]/90 text-[clamp(16px,2.2vw,20px)]">
+          Explore our services to unlock your best self and enhance your unique beauty.
+        </p>
+        <a href="#services"
+           class="mt-6 inline-flex bg-[#4F4F4F] text-white rounded-lg hover:bg-gray-800 transition px-5 py-2 text-[clamp(14px,1.8vw,16px)]">
+          See more
+        </a>
       </div>
 
-      <div class="order-1 md:order-2 relative">
-        <img
-          src="assets/imgs/inicio5.png"
-          alt="Productos de cuidado personal"
-          class="absolute inset-y-0 right-0 h-full w-auto
-                 object-contain md:object-contain"
-        />
-      </div>
+      <figure class="md:justify-self-end">
+        <img ngSrc="assets/imgs/inicio5.png"
+             width="900" height="900"
+             priority fetchpriority="high" decoding="async"
+             alt="Self‑care products arranged on a soft surface"
+             class="block mx-auto md:mx-0 w-[82%] max-w-[420px] md:max-w-[620px] h-auto object-contain" />
+      </figure>
     </div>
+
+    <dl class="mt-10 md:mt-14 rounded-2xl bg-[#F2C6C4] text-white shadow-sm grid grid-cols-3 text-center px-4 md:px-6 py-4 md:py-8">
+      <div>
+        <dt class="text-xs md:text-sm opacity-90">Years of experience</dt>
+        <dd class="text-xl md:text-3xl font-semibold">5</dd>
+      </div>
+      <div class="border-x border-white/20">
+        <dt class="text-xs md:text-sm opacity-90">Professional teams</dt>
+        <dd class="text-xl md:text-3xl font-semibold">10+</dd>
+      </div>
+      <div>
+        <dt class="text-xs md:text-sm opacity-90">Happy customers</dt>
+        <dd class="text-xl md:text-3xl font-semibold">9000+</dd>
+      </div>
+    </dl>
   </div>
-      <div class="mt-10 md:mt-14">
-      <div class="rounded-2xl bg-[#F2C6C4] text-white shadow-sm">
-        <div class="grid grid-cols-3 text-center px-6 py-6 md:py-8">
-          <div>
-            <div class="text-2xl md:text-3xl font-semibold">5</div>
-            <div class="text-sm/5 opacity-90">Years of experience</div>
-          </div>
-          <div class="border-x border-white/20">
-            <div class="text-2xl md:text-3xl font-semibold">10+</div>
-            <div class="text-sm/5 opacity-90">Professional teams</div>
-          </div>
-          <div>
-            <div class="text-2xl md:text-3xl font-semibold">9000+</div>
-            <div class="text-sm/5 opacity-90">Happy customers</div>
-          </div>
-        </div>
-      </div>
-    </div>
 </section>
 
-<services></services>
-<app-about-products></app-about-products>
-<app-testimonials
-  overline="Testimonials"
-  title="What our customers say"
-></app-testimonials>
+@defer (on viewport) {
+  <services id="services"></services>
+} @placeholder {
+  <div style="min-height: 100px"></div>
+}
+
+@defer (on viewport) {
+  <app-about-products id="products"></app-about-products>
+} @placeholder {
+  <div style="min-height: 100px"></div>
+}
+
+@defer (on viewport) {
+  <app-testimonials overline="Testimonials" title="What our customers say"></app-testimonials>
+} @placeholder {
+  <div style="min-height: 100px"></div>
+}
+
 <app-footer></app-footer>
