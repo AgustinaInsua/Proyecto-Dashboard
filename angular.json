@@ -11,6 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "outputPath": "dist/glow-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -65,5 +66,6 @@
       }
     }
   },
-  "cli": { "analytics": false }
+  "cli": { "analytics": false },
+  "defaultProject": "glow-app"
 }
