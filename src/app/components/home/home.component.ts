@@ -12,6 +12,6 @@ import { NgOptimizedImage } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'] 
 })
-export default class HomeComponent {
+export class HomeComponent {
 
 }
