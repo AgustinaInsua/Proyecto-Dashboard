@@ -3,9 +3,8 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spa-beauty": {
+    "glow-app": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -62,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "spa-beauty:build:production"
+              "buildTarget": "glow-app:build:production"
             },
             "development": {
-              "buildTarget": "spa-beauty:build:development"
+              "buildTarget": "glow-app:build:development"
             }
           },
           "defaultConfiguration": "development"
