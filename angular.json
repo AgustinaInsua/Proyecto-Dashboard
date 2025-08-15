@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spa-beauty": {
+    "glow-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",

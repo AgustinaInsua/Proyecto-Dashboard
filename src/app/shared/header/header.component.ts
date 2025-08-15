@@ -20,24 +20,22 @@ import { Router } from '@angular/router';
   host: { class: 'block w-full fixed top-0 z-50' },
 })
 export class HeaderComponent implements AfterViewInit {
-  private router = inject(Router);
-  readonly open = signal(false);
-  private readonly headerOffset = signal(80);
+ readonly open = signal(false);
 
   @ViewChild('hdr', { static: true }) hdr!: ElementRef<HTMLElement>;
 
   ngAfterViewInit(): void {
-    this.updateHeaderOffset();
+    this.updateHeaderOffset(); 
   }
 
   @HostListener('window:resize')
   onResize(): void {
-    this.updateHeaderOffset();
+    this.updateHeaderOffset(); 
   }
 
   private updateHeaderOffset(): void {
     const h = this.hdr?.nativeElement?.offsetHeight ?? 80;
-    this.headerOffset.set(h);
+    document.documentElement.style.setProperty('--hdr', `${h}px`);
   }
 
   toggle(): void { this.open.update(v => !v); }
@@ -46,27 +44,19 @@ export class HeaderComponent implements AfterViewInit {
   @HostListener('document:keydown.escape')
   onEsc(): void { if (this.open()) this.close(); }
 
-
   navigateTo(fragment: string): void {
+    this.close();
 
     if (fragment === 'home' || fragment === 'top') {
-      this.router.navigate([], { fragment }).then(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        this.close();
-      });
+      history.replaceState(null, '', '#home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
-    this.router.navigate([], { fragment }).then(() => {
-
-      requestAnimationFrame(() => {
-        const el = document.getElementById(fragment);
-        if (!el) return;
-
-        const y = el.getBoundingClientRect().top + window.scrollY - this.headerOffset();
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        this.close();
-      });
-    });
+    const el = document.getElementById(fragment);
+    if (el) {
+      history.replaceState(null, '', `#${fragment}`); 
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
